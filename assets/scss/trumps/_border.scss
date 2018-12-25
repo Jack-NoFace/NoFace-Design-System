@@ -1,0 +1,22 @@
+/*///////////////
+/// BORDER
+*///////////////
+
+.border-radius{
+    &--default { border-radius: $border-radius-default; }
+    &--circle { border-radius: 50%; }
+}
+
+.border-colour{
+    &--grey-lightest { border-color: $color-grey-lightest; }
+    &--grey { border-color: $color-grey-light; }
+    &--black { border-color: $color-black; }
+}
+
+.border-style {
+    &--solid { border-style: solid; }
+}
+
+.border-width {
+    &--small { border-width: 0.25px; }
+}

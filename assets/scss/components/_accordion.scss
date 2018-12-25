@@ -1,0 +1,98 @@
+/*///////////////
+/// ACCORDION
+*/ //////////////
+
+.accordion {
+	margin: 0 16px;
+
+	@include bp-min-width($bp-md) {
+		margin: 0 auto;
+	}
+
+	button {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 12px 0;
+		width: 100%;
+
+		background: none;
+		color: $color-black;
+		cursor: pointer;
+		font-weight: 400;
+		opacity: 1;
+		outline: none;
+		text-align: left;
+		text-transform: capitalize;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-right: auto;
+
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+
+		&.active {
+			color: $color-grey;
+
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		svg {
+			height: 12px;
+			color: $color-grey-light;
+			width: 14px;
+
+			transition: all 0.4s ease;
+			transform: rotate(0deg);
+		}
+	}
+}
+
+.accordion__content {
+	height: 0;
+	max-width: 760px;
+	overflow: hidden;
+
+	font-size: 1.6rem;
+	line-height: 1.5;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+
+	p {
+		margin: 0;
+
+		& + p {
+			margin-top: 16px;
+		}
+	}
+
+	ul {
+		font-size: 1.6rem;
+	}
+
+	button.active + & {
+		height: 100%;
+		padding: 0 0 12px;
+
+		opacity: 1;
+	}
+}
+
+.accordion__wrapper {
+	margin-bottom: 8px;
+
+	border: 1px solid $color-grey-lightest;
+	transition: all 0.4s ease;
+
+	@include active-states() {
+		border: 1px solid $color-grey-light;
+	}
+}

@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="margin-top--huge margin-bottom--huge">
+        <main>
+            <article>
+                <h1>404</h1>
+                <h2>Sorry, we couldn't find what you're looking for.</h2>
+                <p>Maybe it’s out there, somewhere... You can always find insightful stories on our
+                    <a href="/">homepage</a>.
+                </p>
+                <p>Still feeling lost? Enjoy these articles and find what you never knew you were looking for.</p>
+                {% include 'organisms/archive.twig' with posts %}
+            </article>
+        </main>
+    </div>
+{% endblock %}

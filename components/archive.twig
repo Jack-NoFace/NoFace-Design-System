@@ -1,0 +1,24 @@
+{% extends "index.twig" %}
+
+{% block content %}
+
+    <div class="margin-top--huge margin-bottom--large">
+        {% if term.parent %}
+            <a href="{{ function('get_category_link', term.parent) }}" class="link link--inherit">
+                View All
+                {{ function('get_cat_name', term.parent) }}
+            </a>
+        {% endif %}
+        <h2 class="margin-top--small">
+            Our
+            {{term.name}}
+            Products
+        </h2>
+    </div>
+
+    <div class="tease-container filter-container">
+        {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'molecules/tease.twig'] %}
+        {% endfor %}
+    </div>
+{% endblock %}

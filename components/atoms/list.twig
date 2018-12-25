@@ -1,0 +1,11 @@
+<ul class="list list--{{fields.style}} {% if fields.links %}list--links{% endif %}">
+    {% for item in fields.items %}
+        {% if fields.links %}
+            <li>
+                <a href="{{item.link}}">{{item.text}}</a>
+            </li>
+        {% else %}
+            <li>{{item.text}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>

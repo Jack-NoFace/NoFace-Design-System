@@ -1,0 +1,6 @@
+{% if fields.shape == "circle" %}
+    {% set classes = "img--circle" %}
+    <img src='{{fields.image.sizes.ratio}}' class="{{classes}}" alt='{{fields.image.alt}}'/>
+{% else %}
+    <img src='{{fields.image.url}}' class="{{classes}}" alt='{{fields.image.alt}}'/>
+{% endif %}

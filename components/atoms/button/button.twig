@@ -1,0 +1,31 @@
+{% if fields.type == "primary" or fields.type == "secondary" %}
+    {% set element = "a" %}
+{% else %}
+    {% set element = "button" %}
+{% endif %}
+
+{% if fields.type == "primary" or fields.type == "primaryAction" %}
+    {% set classType = "primary" %}
+{% else %}
+    {% set classType = "secondary" %}
+{% endif %}
+
+{% if fields.link_to == "page"%}
+    {% if fields.tab %}
+        {% set href = ' href="' ~ fields.page ~ '"' ~ ' target = "_blank" ' %}
+    {% else %}
+        {% set href = ' href="' ~ fields.page ~ '"' %}
+    {% endif %}
+{% elseif fields.link_to == "file" %}
+    {% if fields.tab %}
+        {% set href = ' href="' ~ fields.file ~ '"' ~ ' target = "_blank" ' %}
+    {% else %}
+        {% set href = ' href="' ~ fields.file ~ '"' %}
+    {% endif %}
+{% endif %}
+
+<span class="display--block button-container">
+    <{{element}} class="button button--{{classType}}" {{href}}>
+        {{fields.text}}
+    </{{element}}>
+</span>

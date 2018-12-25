@@ -1,0 +1,123 @@
+.flag-container,
+.flag-contact {
+	& + h1,
+	& + h2,
+	& + h3,
+	& + h4,
+	& + h5,
+	& + h6 {
+		margin-top: $spacing-huge * 2;
+	}
+
+	.flags {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		padding-left: 0;
+
+		list-style: none;
+
+		@include active-states() {
+			.flag {
+				filter: grayscale(100%);
+				opacity: 0.2;
+			}
+
+			.flag {
+				@include active-states() {
+					filter: grayscale(0%);
+					opacity: 1;
+				}
+			}
+		}
+
+		button,
+		img {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			object-fit: cover;
+		}
+
+		button {
+			padding: $spacing-tiny;
+
+			cursor: pointer;
+		}
+
+		img {
+			height: calc(100% - #{$spacing-small});
+			left: $spacing-tiny;
+			top: $spacing-tiny;
+			width: calc(100% - #{$spacing-small});
+
+			box-shadow: $boxshadow-global;
+
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.flag-container {
+	.flag {
+		height: 0;
+		padding-top: 12.5%;
+		position: relative;
+		width: calc(100% / 6);
+
+		transition: 0.2s all ease;
+
+		&:nth-child(6n - 5) {
+			margin-left: 0;
+		}
+
+		@include bp-min-width($bp-lg) {
+			padding-top: 7.5%;
+			width: calc(100% / 9);
+		}
+	}
+}
+
+.flag-contact {
+	.flag {
+		height: 0;
+		margin-left: auto;
+		padding-top: 12.5%;
+		position: relative;
+		width: calc(100% / 6);
+
+		transition: 0.2s all ease;
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			width: 15%;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		@supports (-ms-ime-align: auto) {
+			width: 15%;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		&:nth-child(6n - 5) {
+			margin-left: 0;
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}

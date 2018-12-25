@@ -1,0 +1,112 @@
+/*///////////////
+/// PADDING
+*///////////////
+
+.padding {
+    &--none { padding: 0; }
+    &--tiny { padding: $spacing-tiny; }
+    &--small { padding: $spacing-small; }
+    &--default { padding: $spacing-default; }
+    &--large { padding: $spacing-large; }
+    &--huge { padding: $spacing-huge; }
+}
+
+.padding--small\@tablet { @include bp-min-width($bp-tablet) { padding: $spacing-small; } }
+.padding--default\@tablet { @include bp-min-width($bp-tablet) { padding: $spacing-default; } }
+.padding--large\@tablet-large { @include bp-min-width($bp-tablet-large) { padding: $spacing-large; } }
+.padding--huge\@tablet-large { @include bp-min-width($bp-tablet-large) { padding: $spacing-huge; } }
+
+
+.padding-vertical{
+    &--tiny {
+        padding-top: $spacing-tiny;
+        padding-bottom: $spacing-tiny;
+    }
+    &--small {
+        padding-top: $spacing-small;
+        padding-bottom: $spacing-small;
+    }
+    &--default {
+        padding-top: $spacing-default;
+        padding-bottom: $spacing-default;
+    }
+    &--large {
+        padding-top: $spacing-large;
+        padding-bottom: $spacing-large;
+        &\@tablet-large { @include bp-min-width($bp-tablet-large) {
+            padding-top: $spacing-large;
+            padding-bottom: $spacing-large;
+        } }
+    }
+    &--huge {
+        padding-top: $spacing-huge;
+        padding-bottom: $spacing-huge;
+        &\@tablet-large { @include bp-min-width($bp-tablet-large) {
+            padding-top: $spacing-huge;
+            padding-bottom: $spacing-huge;
+        } }
+    }
+}
+
+.padding-horizontal{
+    &--tiny {
+        padding-left: $spacing-tiny;
+        padding-right: $spacing-tiny;
+    }
+    &--small {
+        padding-left: $spacing-small;
+        padding-right: $spacing-small;
+    }
+    &--default {
+        padding-left: $spacing-default;
+        padding-right: $spacing-default;
+    }
+    &--large {
+        padding-left: $spacing-large;
+        padding-right: $spacing-large;
+        &\@tablet-large { @include bp-min-width($bp-tablet-large) {
+            padding-left: $spacing-large;
+            padding-right: $spacing-large;
+        } }
+    }
+    &--huge {
+        padding-left: $spacing-huge;
+        padding-right: $spacing-huge;
+        &\@tablet-large { @include bp-min-width($bp-tablet-large) {
+            padding-left: $spacing-huge;
+            padding-right: $spacing-huge;
+        } }
+    }
+}
+
+.padding-top {
+    &--tiny { padding-top: $spacing-tiny; }
+    &--small { padding-top: $spacing-small; }
+    &--default { padding-top: $spacing-default; }
+    &--large { padding-top: $spacing-large; }
+    &--huge { padding-top: $spacing-huge; }
+}
+
+.padding-right {
+    &--tiny { padding-right: $spacing-tiny; }
+    &--small { padding-right: $spacing-small; }
+    &--default { padding-right: $spacing-default; }
+    &--large { padding-right: $spacing-large; }
+    &--huge { padding-right: $spacing-huge; }
+}
+
+.padding-bottom {
+    &--tiny { padding-bottom: $spacing-tiny; }
+    &--small { padding-bottom: $spacing-small; }
+    &--default { padding-bottom: $spacing-default; }
+    &--large { padding-bottom: $spacing-large; }
+    &--huge { padding-bottom: $spacing-huge; }
+}
+
+.padding-left {
+    &--tiny { padding-left: $spacing-tiny; }
+    &--small { padding-left: $spacing-small; }
+    &--default { padding-left: $spacing-default; }
+    &--large { padding-left: $spacing-large; }
+    &--huge { padding-left: $spacing-huge; }
+}

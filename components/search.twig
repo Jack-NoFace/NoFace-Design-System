@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="background--grey margin-top--large margin-bottom--huge">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text--center margin-top--huge">Search Our Site</h1>
+                </div>
+                <div class="col-12 col-md-8 offset-md-2">
+                    <div class="margin-top--large margin-bottom--huge">
+                        {% include 'molecules/searchbar.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+/*///////////////
+/// POSITION
+*/ //////////////
+
+.position {
+    &--absoulte {
+        position: absolute;
+    }
+    &--relative {
+        position: relative;
+    }
+}

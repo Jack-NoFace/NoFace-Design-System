@@ -1,0 +1,6 @@
+<{{fields.level}} class="title--{{fields.size}} {% if fields.icon %}title--icon{% endif %}" id="{{ fields.text|lower|replace(' ', '-') }}">
+    <span class="title__text">{{fields.text}}</span>
+    {% if fields.icon %}
+        <img class="title__icon" src="{{fields.icon.url}}" alt="{{fields.text}} heading icon">
+    {% endif %}
+</{{fields.level}}>

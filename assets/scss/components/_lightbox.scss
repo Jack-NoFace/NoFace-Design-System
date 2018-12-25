@@ -1,0 +1,64 @@
+.lightbox {
+	align-items: center;
+	display: flex;
+	height: 0%;
+	justify-content: center;
+	padding: 0;
+	position: fixed;
+	left: 0;
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+
+	background-color: rgba($color-black, 0.8);
+	cursor: pointer;
+	transition: 0.4s height ease;
+
+	& > div {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 400px;
+		max-width: 100%;
+		padding: $spacing-default;
+		width: 800px;
+
+		background-color: $color-white;
+		color: $color-black;
+		cursor: default;
+
+		* {
+			width: 100%;
+		}
+
+		@include bp-min-width($bp-md) {
+			padding: $spacing-large;
+		}
+	}
+
+	img {
+		display: block;
+		margin: 0 auto $spacing-large;
+		max-width: 100px;
+
+		@include bp-min-width($bp-md) {
+			max-width: 200px;
+		}
+	}
+
+	p {
+		font-size: 1.2rem;
+		text-align: center;
+
+		@include bp-min-width($bp-md) {
+			font-size: 1.6rem;
+		}
+	}
+
+	&--show {
+		height: 100%;
+		padding: $spacing-default;
+	}
+}
