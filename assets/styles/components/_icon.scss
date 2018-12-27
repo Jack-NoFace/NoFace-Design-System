@@ -1,0 +1,19 @@
+/* ICON */
+
+.icon {
+}
+
+.icon--small {
+	width: $spacing-large;
+	height: $spacing-large;
+}
+
+.icon--medium {
+	width: $spacing-huge;
+	height: $spacing-huge;
+}
+
+.icon--large {
+	width: $spacing-huge * 2;
+	height: $spacing-huge * 2;
+}

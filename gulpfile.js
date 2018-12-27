@@ -9,43 +9,11 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
-const concat = require("gulp-concat");
 const path = require("path");
-const browserSync = require("browser-sync").create();
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify-es").default;
-
-const babel = require("gulp-babel");
-
-gulp.task("scripts", function() {
-	return gulp
-		.src("assets/scripts/script.js")
-		.pipe(sourcemaps.init())
-		.pipe(concat("script.js"))
-		.pipe(babel())
-		.pipe(uglify())
-		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("public/js"));
-});
-
-gulp.task("scriptsSlider", function() {
-	return gulp
-		.src([
-			"assets/scripts/jquery-3.1.1.min.js",
-			"assets/scripts/slick.min.js",
-			"assets/scripts/slider.js"
-		])
-		.pipe(sourcemaps.init())
-		.pipe(concat("slider.js"))
-		.pipe(babel())
-		.pipe(uglify())
-		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("public/js"));
-});
 
 gulp.task("sass", function() {
 	return gulp
-		.src("assets/scss/**/*.scss")
+		.src("assets/styles/**/*.scss")
 		.pipe(customPlumber("Error running Sass"))
 		.pipe(sassGlob())
 		.pipe(sass())
@@ -56,8 +24,7 @@ gulp.task("sass", function() {
 				console.log(`${details.name}: ${details.stats.minifiedSize}`);
 			})
 		)
-		.pipe(gulp.dest("public/css"))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest("public/css"));
 });
 
 function customPlumber(errTitle) {
@@ -80,16 +47,8 @@ gulp.task("fractal", function() {
 });
 
 // Static Server + watching sass/html files
-gulp.task("serve", ["fractal", "sass", "scripts"], function() {
-	browserSync.init({ proxy: "http://local-ecobreeze.com" });
-
-	gulp
-		.watch(["assets/scripts/**/*.js"], ["scripts"])
-		.on("change", browserSync.reload);
-	gulp
-		.watch(["assets/scss/**/*.scss"], ["sass"])
-		.on("change", browserSync.reload);
-	gulp.watch("components/**/*.twig").on("change", browserSync.reload);
+gulp.task("serve", ["fractal", "sass"], function() {
+	gulp.watch(["assets/styles/**/*.scss"], ["sass"]);
 });
 
 gulp.task("default", ["serve"]);

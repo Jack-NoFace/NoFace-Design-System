@@ -1,0 +1,65 @@
+/*///////////////
+/// BACKGROUND
+*/ //////////////
+
+.background-color {
+	&--black {
+		background-color: $color-black;
+	}
+	&--grey {
+		background-color: $color-grey;
+	}
+	&--off-white {
+		background-color: $color-off-white;
+	}
+	&--white {
+		background-color: $color-white;
+	}
+
+	&--blue {
+		background-color: $color-blue;
+	}
+	&--dark-blue {
+		background-color: $color-dark-blue;
+	}
+	&--pink {
+		background-color: $color-pink;
+	}
+	&--red {
+		background-color: $color-red;
+	}
+	&--primary {
+		background-color: $color-primary;
+	}
+}
+
+.background--cover {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.background--position {
+	&-left-center {
+		background-position: left center;
+	}
+}
+
+.background-overlay {
+	&--dark {
+		&:before {
+			content: "";
+			display: block;
+			top: 0;
+			left: 0;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: rgba($color-black, 0.8);
+		}
+	}
+}
+
+.background--fixed {
+	background-attachment: fixed;
+}

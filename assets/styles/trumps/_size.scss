@@ -1,0 +1,39 @@
+/*///////////////
+/// SIZE
+*///////////////
+
+.height {
+    &--large {
+        min-height: calc(90vh - 110px);
+
+        .home & {
+            min-height: 110vh;
+        }
+
+        @include bp-min-width ($bp-mobile-large) {
+            min-height: 90vh;
+        }
+    }
+
+    &--large-fixed {
+        height: calc(90vh - 110px);
+
+        @include bp-min-width ($bp-mobile-large) {
+            height: 90vh;
+        }
+    }
+
+    &--full { min-height: 100vh; }
+}
+
+.object-fit {
+    &--cover { object-fit: cover; }
+}
+
+.width {
+    &--full { width: 100%; }
+    &--small { max-width: 100px; }
+    &--content { width: 100%; max-width: $width-content; }
+    &--optimal { max-width: 65ch; }
+    &--half { @include bp-min-width ($bp-mobile-large) { width: 50%; } }
+}

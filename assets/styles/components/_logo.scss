@@ -1,0 +1,56 @@
+/*///////////////
+/// LOGO
+*/ //////////////
+
+.logo {
+	img {
+		width: 300px;
+		margin-bottom: $spacing-large;
+	}
+}
+
+.animated-logo {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	width: 100vw;
+
+	background-color: $color-primary;
+
+	.logo {
+		width: 50%;
+		max-width: 400px;
+		position: relative;
+
+		&__path {
+			animation-name: drawPreview;
+			animation-duration: 4s;
+			animation-timing-function: linear;
+			animation-timing-function: ease;
+			animation-iteration-count: infinite; // Run only once
+
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			fill: none;
+			stroke: $color-white;
+			stroke-width: 10;
+			stroke-dasharray: 142.47500610351562px;
+			stroke-dashoffset: 142.47500610351562px;
+			animation-fill-mode: forwards; // Stay on the last frame
+		}
+	}
+
+	@keyframes drawPreview {
+		from {
+		}
+
+		50% {
+			stroke-dashoffset: 0;
+		}
+
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+}

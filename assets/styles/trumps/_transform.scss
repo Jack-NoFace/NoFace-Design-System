@@ -1,0 +1,12 @@
+/*///////////////
+/// TRANSFORM
+*///////////////
+
+.transform{
+    transition: 0.3s all ease;
+
+    &-zoom {
+        &--in { @include active-states() { transform: scale(1.05); } }
+        &--out { @include active-states() { transform: scale(0.95); } }
+    }
+}

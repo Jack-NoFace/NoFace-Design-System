@@ -1,0 +1,88 @@
+/* MODAL */
+
+.dialog-wrapper {
+	align-items: center;
+	bottom: 0;
+	display: flex;
+	height: 0;
+	justify-content: center;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: $z-index-front;
+
+	background-color: rgba($color-black, 0.7);
+	opacity: 0;
+	transition: opacity 0.4s ease;
+
+	&.show {
+		height: auto;
+
+		opacity: 1;
+	}
+}
+
+.dialog {
+	max-width: 800px;
+	padding: $spacing-large;
+	position: relative;
+	width: 85%;
+
+	@include var(background-color, off-white);
+	text-align: center;
+
+	form {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0;
+	}
+
+	&__content {
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.gform_wrapper {
+		label {
+			@include var(color, black);
+			font-weight: 700;
+		}
+
+		li {
+			display: block;
+		}
+
+		ul {
+			display: block;
+			padding-left: 0;
+
+			list-style: none;
+		}
+
+		.gfield_checkbox li {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+
+			input {
+				margin: 0;
+			}
+
+			label {
+				margin-bottom: 0;
+				margin-left: $spacing-small;
+			}
+		}
+	}
+}

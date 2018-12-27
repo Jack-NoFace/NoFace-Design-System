@@ -1,0 +1,154 @@
+/* SECTION */
+
+section {
+	padding: $spacing-default;
+	line-height: 1.45;
+
+	padding: $spacing-default;
+}
+
+.section {
+	&--image {
+		position: relative;
+		overflow: hidden;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			text-shadow: 0px 4px 7px rgba($color-black, 0.6);
+		}
+
+		p {
+			text-shadow: 0px 4px 7px rgba($color-black, 0.2);
+		}
+
+		> * {
+			position: relative;
+			z-index: 50;
+		}
+
+		> .video--full-container {
+			z-index: 48;
+		}
+	}
+
+	&--dark {
+		background-color: $color-black;
+		color: $color-white;
+	}
+	&--light {
+		background-color: $color-white;
+		color: $color-black;
+	}
+}
+
+.section__background {
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+
+	& picture {
+		position: relative;
+	}
+
+	& img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+.section--wide {
+	.section__content {
+		max-width: 120ch;
+	}
+}
+
+.section__content {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 70ch;
+
+	@include bp-min-width($bp-tablet) {
+		padding: $spacing-large;
+	}
+
+	text-align: center;
+}
+
+.section--left {
+	.section__content {
+		margin: 0 auto 0 0;
+
+		text-align: left;
+	}
+}
+
+.section--right {
+	.section__content {
+		margin: 0 0 0 auto;
+
+		text-align: left;
+	}
+}
+
+.section--description {
+	position: relative;
+	overflow: hidden;
+
+	background-color: $color-primary;
+	color: $color-white;
+
+	@include bp-min-width($bp-tablet-large) {
+		&__before,
+		&__after {
+			height: 300px;
+			position: absolute;
+			width: 300px;
+
+			background-image: url(../images/logo--white.png);
+			background-repeat: no-repeat;
+			background-size: 300px;
+			animation-duration: 60s;
+			animation-name: rotate360;
+			animation-iteration-count: infinite;
+			transform-origin: center center;
+			animation-timing-function: linear;
+		}
+
+		&__before {
+			left: -150px;
+			top: -150px;
+		}
+
+		&__after {
+			bottom: -150px;
+			right: -150px;
+		}
+	}
+
+	.section__content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 70vh;
+	}
+}
+
+@keyframes rotate360 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}

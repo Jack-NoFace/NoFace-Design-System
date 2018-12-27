@@ -1,0 +1,61 @@
+/*///////////////
+/// COLUMN
+*///////////////
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        width: 100%;
+    }
+
+    &--alternate {
+        div:nth-of-type(2n+0) {
+            @include bp-min-width($bp-tablet) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
+.column--2,
+.column--3,
+.column--4,
+.column--5 {
+    @include bp-min-width($bp-tablet) {
+        flex-direction: row;
+    }
+}
+
+.column--2 {
+    &__item {
+        @include bp-min-width($bp-tablet) {
+            width: 50%;
+        }
+    }
+}
+
+.column--3 {
+    &__item {
+        @include bp-min-width($bp-tablet) {
+            width: 33.33%;
+        }
+    }
+}
+
+.column--4 {
+    &__item {
+        @include bp-min-width($bp-tablet) {
+            width: 25%;
+        }
+    }
+}
+
+.column--5 {
+    &__item {
+        @include bp-min-width($bp-tablet) {
+            width: 20%;
+        }
+    }
+}

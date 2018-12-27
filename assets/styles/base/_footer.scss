@@ -1,0 +1,48 @@
+/* FOOTER */
+
+footer {
+	padding: $spacing-large;
+	color: $color-white;
+	background-color: darken($color-black, 2.5%);
+
+	a {
+		color: rgba($color-white, 0.8);
+		text-decoration: none;
+		transition: 0.2s color ease;
+
+		@include active-states() {
+			color: rgba($color-white, 1);
+		}
+	}
+
+	h4 {
+		margin-bottom: $spacing-small;
+		margin-top: $spacing-large;
+	}
+
+	li {
+		line-height: 1.5;
+		margin-top: $spacing-tiny;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.logo {
+		min-width: 50px;
+		width: 50px;
+
+		&__path {
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			fill: none;
+			stroke: $color-white;
+			stroke-width: 10;
+		}
+	}
+
+	@include bp-min-width($bp-tablet) {
+		padding-bottom: $spacing-huge;
+	}
+}

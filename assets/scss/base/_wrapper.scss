@@ -1,9 +1,0 @@
-/*///////////////
-/// WRAPPER
-*/ //////////////
-
-.wrapper {
-	@supports (min-height: 100vh) {
-		flex: 1;
-	}
-}

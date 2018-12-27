@@ -1,0 +1,105 @@
+/*
+Theme Name: NoFace Theme
+Author: Jack Davies
+Author URI: https://noface.co.uk
+Version: 2.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*///////////////
+/// MAIN
+*/ //////////////
+
+@import "mixins/active-states.scss";
+@import "mixins/media-queries.scss";
+@import "mixins/variables.scss";
+
+@import "reset/box-sizing.scss";
+@import "reset/normalize.scss";
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "vars.scss";
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+	(
+		0: 0,
+		1: $spacing-tiny,
+		2: $spacing-small,
+		3: $spacing-default,
+		4: $spacing-large,
+		5: $spacing-huge
+	),
+	$spacers
+);
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities/display";
+@import "../../node_modules/bootstrap/scss/utilities/flex";
+@import "../../node_modules/bootstrap/scss/utilities/spacing";
+@import "../../node_modules/bootstrap/scss/utilities/text";
+@import "base/root.scss";
+@import "base/anchor.scss";
+@import "base/article.scss";
+@import "base/blockquote.scss";
+@import "base/body.scss";
+@import "base/button.scss";
+@import "base/code.scss";
+@import "base/figure.scss";
+@import "base/footer.scss";
+@import "base/form.scss";
+@import "base/header.scss";
+@import "base/headings.scss";
+@import "base/hr.scss";
+@import "base/html.scss";
+@import "base/image.scss";
+@import "base/list.scss";
+@import "base/nav.scss";
+@import "base/paragraph.scss";
+@import "base/section.scss";
+@import "base/table.scss";
+@import "base/video.scss";
+@import "base/wrapper.scss";
+@import "components/animated.scss";
+@import "components/case-study.scss";
+@import "components/chart.scss";
+@import "components/comment.scss";
+@import "components/cta.scss";
+@import "components/dialog.scss";
+@import "components/icon.scss";
+@import "components/logo.scss";
+@import "components/news.scss";
+@import "components/palette.scss";
+@import "components/photography.scss";
+@import "components/related.scss";
+@import "components/team.scss";
+@import "components/youtube.scss";
+@import "components/power-pages/chapter.scss";
+@import "components/power-pages/social.scss";
+@import "override/grid.scss";
+@import "trumps/background.scss";
+@import "trumps/border.scss";
+@import "trumps/column.scss";
+@import "trumps/display.scss";
+@import "trumps/flex.scss";
+@import "trumps/hide.scss";
+@import "trumps/margin.scss";
+@import "trumps/padding.scss";
+@import "trumps/position.scss";
+@import "trumps/size.scss";
+@import "trumps/shadow.scss";
+@import "trumps/text.scss";
+@import "trumps/transform.scss";

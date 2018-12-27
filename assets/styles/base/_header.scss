@@ -1,0 +1,84 @@
+/* HEADER */
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+	width: 100%;
+	padding: $spacing-default;
+
+	font-weight: 700;
+
+	li {
+		display: inline-block;
+		letter-spacing: 0.2px;
+	}
+
+	a {
+		color: $color-white;
+	}
+
+	nav {
+		width: 100%;
+		max-width: 275px;
+
+		@include bp-min-width($bp-tablet) {
+			max-width: 380px;
+		}
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		min-width: 50px;
+		width: 50px;
+		position: relative;
+
+		&__path {
+			animation-name: draw;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-timing-function: ease;
+			animation-iteration-count: 1; // Run only once
+
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			fill: none;
+			stroke: $color-white;
+			stroke-width: 10;
+			stroke-dasharray: 142.47500610351562px;
+			stroke-dashoffset: 142.47500610351562px;
+			animation-fill-mode: forwards; // Stay on the last frame
+		}
+	}
+
+	@keyframes draw {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	.menu-item-home,
+	.menu-item-103 {
+		display: none;
+
+		@include bp-min-width($bp-tablet) {
+			display: inline-block;
+		}
+	}
+
+	@include bp-min-width($bp-tablet) {
+		padding: $spacing-default $spacing-large;
+		flex-direction: row;
+	}
+}
